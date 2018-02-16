@@ -1,12 +1,12 @@
 #!/bin/bash
 
-$uid=1002
-$gid=1006
+uid=1002
+gid=1006
 
-$app_name=hydra
-$nfs_mountPoint=/srv/tiger/svcs
-$nfs_app=nzbhydra
-$nfs_dropFolder=dropfolder
+app_name=hydra
+nfs_mountPoint=/srv/tiger/svcs
+nfs_app=nzbhydra
+nfs_dropFolder=dropfolder
 
 echo "starting nzb hydra with correct env options"
 docker create --name=$app_name \
