@@ -17,4 +17,4 @@ COPY root/ /
 
 # Expose NZBHydra Port and Volumes
 EXPOSE 5075
-VOLUME /config /downloads
+#VOLUME /config /downloads

@@ -2,9 +2,9 @@
 
 # make our folders
 mkdir -p \
-	/config/hydra
+	/config
 
 # permissions
 chown -R abc:abc \
 	/config \
-/app/hydra
+    /app/hydra
