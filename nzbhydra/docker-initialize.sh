@@ -15,4 +15,4 @@ docker create --name=$app_name \
 -e PGID=$gid -e PUID=$uid \
 -e TZ=Europe/Zurich \
 -p 5075:5075 \
-hydra
+nzbhydra
