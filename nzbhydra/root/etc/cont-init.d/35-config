@@ -8,3 +8,5 @@ mkdir -p \
 chown -R abc:abc \
 	/config \
     /app/hydra
+
+exit 0
