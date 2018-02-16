@@ -1,0 +1,1 @@
+NZB Hydra, based on https://github.com/linuxserver/docker-hydra but not copied.
