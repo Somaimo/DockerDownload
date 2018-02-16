@@ -6,4 +6,4 @@ exec \
 	s6-setuidgid abc python /app/hydra/nzbhydra.py \
 	--nobrowser --config /config/settings.cfg \
 	--database /config/nzbhydra.db \
---logfile /config/nzbhydra.log
+    --logfile /config/nzbhydra.log
