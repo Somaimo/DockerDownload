@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bash
+
+# make our folders
+mkdir -p \
+	/config/hydra
+
+# permissions
+chown -R abc:abc \
+	/config \
+/app/hydra
