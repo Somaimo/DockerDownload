@@ -28,8 +28,7 @@ RUN \
     chmod +x /app/hydra2/nzbhydra2wrapper.py && \
     echo "---- cleaning up temp files ----" && \
     rm -rf \
-        /tmp/*i && \
-    echo ".-.-.-. All done .-.-.-."
+        /tmp/*
 
 # copy local files to container
 COPY root/ /
