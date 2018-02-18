@@ -1,9 +1,11 @@
 #!/usr/bin/with-contenv bash
 
-cd /config || exit
+# unset special env variable that causes crashes
+unset HOST_OS
+
+# cd into dir, if error we just exit
+cd /app/hydra2 || exit
 
 exec \
-	s6-setuidgid abc python /app/hydra/nzbhydra.py \
-	--nobrowser --config /config/settings.cfg \
-	--database /config/nzbhydra.db \
-    --logfile /config/nzbhydra.log
+	s6-setuidgid abc /app/hydra2/nzbhydra2wrapper.py \
+	--nobrowser --datafolder /config

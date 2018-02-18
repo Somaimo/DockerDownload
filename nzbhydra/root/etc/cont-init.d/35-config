@@ -1,11 +1,10 @@
 #!/usr/bin/with-contenv bash
 
 # make our folders
-# mkdir -p \
-#	/config
+mkdir -p \
+	/config/logs
 
 # permissions
-chown -R abc:abc \
-    /app/hydra
-
-exit 0
+chmod +x /app/hydra2/nzbhydra2
+# Making sure we own config files
+chown -R abc:abc /config
