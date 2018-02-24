@@ -3,18 +3,19 @@
 uid=1002
 gid=1006
 
-app_name=sabnzbd
+app_name=radarr
 nfs_mountPoint=/srv/tiger/svcs
-nfs_app=sab-new
+nfs_app=radarr
 nfs_downloadFolder=complete
-nfs_incompleteFolder=incomplete
+nfs_moviesFolder=/srv/tiger/movies
+nfs_dropFolder=dropfolder
 
 echo "starting nzb hydra with correct env options"
 docker run -d --name=$app_name \
 -v $nfs_mountPoint/$nfs_app:/config \
--v $nfs_mountPoint/$nfs_downloadFolder:/downloads \
--v $nfs_mountPoint/$nfs_incompleteFolder:/incomplete-downloads \
+-v $nfs_mountPoint/$nfs_downloadFolder/movies:/downloads \
+-v $nfs_moviesFolder:/movies \
 -e PGID=$gid -e PUID=$uid \
 -e TZ=Europe/Zurich \
--p 8080:8080 \
+-p 7878:7878 \
 linuxserver/sabnzbd

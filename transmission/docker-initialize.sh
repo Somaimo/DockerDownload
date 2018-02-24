@@ -3,18 +3,19 @@
 uid=1002
 gid=1006
 
-app_name=sabnzbd
+app_name=transmission
 nfs_mountPoint=/srv/tiger/svcs
-nfs_app=sab-new
+nfs_app=transmission
 nfs_downloadFolder=complete
-nfs_incompleteFolder=incomplete
+nfs_dropFolder=dropfolder
 
 echo "starting nzb hydra with correct env options"
 docker run -d --name=$app_name \
 -v $nfs_mountPoint/$nfs_app:/config \
 -v $nfs_mountPoint/$nfs_downloadFolder:/downloads \
--v $nfs_mountPoint/$nfs_incompleteFolder:/incomplete-downloads \
+-v $nfs_mountPoint/$nfs_dropFolder:/watch \
 -e PGID=$gid -e PUID=$uid \
 -e TZ=Europe/Zurich \
--p 8080:8080 \
+-p 9091:9091 \
+-p 51333:51333 \
 linuxserver/sabnzbd
