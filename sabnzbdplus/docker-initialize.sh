@@ -9,7 +9,7 @@ nfs_app=sab-new
 nfs_downloadFolder=complete
 nfs_incompleteFolder=incomplete
 
-echo "starting nzb hydra with correct env options"
+echo "starting ${app_name} with correct env options"
 docker run -d --name=$app_name \
 -v $nfs_mountPoint/$nfs_app:/config \
 -v $nfs_mountPoint/$nfs_downloadFolder:/downloads \

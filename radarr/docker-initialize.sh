@@ -10,7 +10,7 @@ nfs_downloadFolder=complete
 nfs_moviesFolder=/srv/tiger/movies
 nfs_dropFolder=dropfolder
 
-echo "starting nzb hydra with correct env options"
+echo "starting ${app_name} with correct env options"
 docker run -d --name=$app_name \
 -v $nfs_mountPoint/$nfs_app:/config \
 -v $nfs_mountPoint/$nfs_downloadFolder/movies:/downloads \
@@ -18,4 +18,4 @@ docker run -d --name=$app_name \
 -e PGID=$gid -e PUID=$uid \
 -e TZ=Europe/Zurich \
 -p 7878:7878 \
-linuxserver/sabnzbd
+linuxserver/radarr
