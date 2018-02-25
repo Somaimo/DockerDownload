@@ -18,4 +18,4 @@ docker run -d --name=$app_name \
 -e TZ=Europe/Zurich \
 -p 9091:9091 \
 -p 51333:51333 \
-linuxserver/sabnzbd
+linuxserver/transmission
