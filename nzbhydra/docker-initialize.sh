@@ -7,6 +7,7 @@ app_name=hydra2
 nfs_mountPoint=/srv/tiger/svcs
 nfs_app=nzbhydra
 nfs_dropFolder=dropfolder
+nfs_mediaMountPoint=/srv/tiger/media
 
 echo "starting nzb hydra with correct env options"
 docker run -d --name=$app_name \
