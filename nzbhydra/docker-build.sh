@@ -1,5 +1,5 @@
 #!/bin/bash
 
-$app_name=nzbhydra
+app_name=nzbhydra
 
 docker build -t nzbhydra .
