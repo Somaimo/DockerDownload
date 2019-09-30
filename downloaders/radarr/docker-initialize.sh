@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # The user is the user marc on freenas and the media_rw group
-uid=1002
-gid=1006
+uid=1005
+gid=1017
 
 app_name=radarr
 nfs_mountPoint=/srv/tiger/svcs
