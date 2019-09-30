@@ -14,13 +14,13 @@ echo "initalizing docker volumes for downloading containers."
 echo "creating Config Volumes. Number of volumes: $numConfigVolume"
 
 # Config Volumes
-for confVol in heimdall radarr sonarr sabnzbd transmission
+for confVol in nzbhydra radarr sonarr sabnzbd transmission
 do
 	if docker volume ls | grep ${confVol}_config >/dev/null 2>&1 ; then
 		echo "volume already exists, skipping creation"
 	else
 		echo "creating volume $confVol"
-		docker volume create --driver local --opt type=nfs --opt o=nfsvers=4,addr=10.20.1.10,rw --opt device=:/mnt/lambo/container-configs/$confVol $confVol"_config"
+		docker volume create --driver local --opt type=nfs --opt o=nfsvers=4,addr=10.20.1.10,rw,noatime,rsize=8192,wsize=8192,tcp,timeo=14 --opt device=:/mnt/lambo/container-configs/$confVol $confVol"_config"
 	fi
 done
 
