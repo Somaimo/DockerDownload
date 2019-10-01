@@ -5,17 +5,15 @@ uid=1005
 gid=1017
 
 app_name=radarr
-nfs_mountPoint=/srv/tiger/svcs
-nfs_app=radarr
-nfs_downloadFolder=complete
-nfs_mediaMountPoint=/srv/tiger/media
-nfs_dropFolder=dropfolder
+confVolume=radarr_config
+completeVolume=complete_rw
+movieVolume=movies_rw
 
 echo "starting ${app_name} with correct env options"
 docker run -d --name=$app_name \
--v $nfs_mountPoint/$nfs_app:/config \
--v $nfs_mediaMountPoint/complete:/downloads \
--v $nfs_mediaMountPoint/movies:/movies \
+-v $confVolume:/config \
+-v $completeVolume:/downloads \
+-v $movieVolume:/movies \
 -v /etc/localtime:/etc/localtime:ro \
 -e PGID=$gid -e PUID=$uid \
 -e TZ=Europe/Zurich \
