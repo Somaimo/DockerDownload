@@ -7,7 +7,7 @@
 # host the streaming containers.
 
 numConfigVolumes=2
-numMediaVolumes=1
+numMediaVolumes=3
 
 
 echo "initalizing docker volumes for downloading containers."
@@ -25,7 +25,7 @@ do
 done
 
 # Media Volumes
-for mediaVol in media_ro
+for mediaVol in media_ro media_rw
 do
 	# separate volume name and access rights
 	volName=$(echo $mediaVol | cut -f1 -d_)
