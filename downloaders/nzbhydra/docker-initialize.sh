@@ -1,19 +1,18 @@
 #!/bin/bash
 
-uid=1002
-gid=1006
+uid=1005
+gid=1017
 
 app_name=hydra2
-nfs_mountPoint=/srv/tiger/svcs
-nfs_app=nzbhydra
-nfs_dropFolder=dropfolder
-nfs_mediaMountPoint=/srv/tiger/media
+confVolume=nzbhydra_config
+dropfolderVolume=dropfolder-nzbhydra_rw
 
 echo "starting nzb hydra with correct env options"
 docker run -d --name=$app_name \
--v $nfs_mountPoint/$nfs_app:/config \
--v $nfs_mountPoint/$nfs_dropFolder:/downloads \
+-v $confVolume:/config \
+-v $dropfolderVolume:/downloads \
 -e PGID=$gid -e PUID=$uid \
 -e TZ=Europe/Zurich \
 -p 5075:5075 \
-nzbhydra
+--restart unless-stopped \
+linuxserver/hydra2
