@@ -12,5 +12,6 @@ In this folder all specific containers for the stream hosts are stored (includin
 
 
 # TODO
-- Refactor volume creation (should be one script that creates the volume). Deployscripts just check if volume is available.
-- Separate Media tools from download tools.
+- [ ] Add new volume creation script for admin containers.
+- [x] Refactor volume creation (should be one script that creates the volume). Deployscripts just check if volume is available.
+- [x] Separate Media tools from download tools.
