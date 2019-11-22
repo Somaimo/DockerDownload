@@ -12,5 +12,6 @@ In this folder all specific containers for the stream hosts are stored (includin
 
 
 # TODO
-- Refactor volume creation (should be one script that creates the volume). Deployscripts just check if volume is available.
-- Separate Media tools from download tools.
+- :white_large_square: Add new volume creation script for admin containers.
+- :white_check_mark: Refactor volume creation (should be one script that creates the volume). Deployscripts just check if volume is available.
+- :white_check_mark: Separate Media tools from download tools.
