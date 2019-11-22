@@ -21,5 +21,6 @@ docker run -d --name=$app_name \
 -v $local_tanscodePath:/transcode \
 -e PGID=$gid -e PUID=$uid \
 -e TZ=Europe/Zurich \
+-e VERSION=latest \
 -p 32400:32400 \
 linuxserver/plex
