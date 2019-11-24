@@ -23,4 +23,5 @@ docker run -d --name=$app_name \
 -e TZ=Europe/Zurich \
 -e VERSION=latest \
 -p 32400:32400 \
+--restart unless-stopped \
 linuxserver/plex
