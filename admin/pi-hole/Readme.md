@@ -17,6 +17,7 @@ This spins up a pihole docker container and connects the config files (either ne
 1. Set ```DNSStubListener=no``` in /etc/systemd/resolved.conf
 2. Set ```DNS=``` in /etc/systemd/resolved.conf to a DNS Server that makes sense.
 2. Restart systemd-resolved with ```sudo systemctl restart systemd-resolved.service```
+3. Remove /etc/resolv.conf (no worries, it's just a link) and create new link: ```ln -s /var/run/systemd/resolve/resolv.conf /etc/resolv.conf```
 4. All Done!
 
 ### Install Docker and Docker Compose on Raspi (ubuntu lts)
