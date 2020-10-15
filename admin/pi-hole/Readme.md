@@ -5,12 +5,19 @@ This spins up a pihole docker container and connects the config files (either ne
 ## Requirements
 
 - Docker
+- Disable Systemd-resolved
 - Docker Compose
 
 ### Install general Stuff on Raspi
 1. Install ZSH ```sudo apt install zsh```
 2. Install Oh-My-ZSH ```sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"```
 3. Copy Files from other raspy to this raspy
+
+### Disable Systemd-resolved
+1. Set ```DNSStubListener=no``` in /etc/systemd/resolved.conf
+2. Set ```DNS=``` in /etc/systemd/resolved.conf to a DNS Server that makes sense.
+2. Restart systemd-resolved with ```sudo systemctl restart systemd-resolved.service```
+4. All Done!
 
 ### Install Docker and Docker Compose on Raspi (ubuntu lts)
 
