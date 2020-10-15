@@ -18,7 +18,7 @@ services:
       TZ: 'Europe/Zurich'
       ADMIN_EMAIL: 'mwinkler@bluewin.ch'
       DNSSEC: 'True'
-      ServerIP: '192.168.11.9'
+      ServerIP: '192.168.11.8'
       VIRTUAL_HOST: 'pihole.soultree.lan'
       DNSMASQ_LISTENING: 'all'
       TEMPERATUREUNIT: 'c'
