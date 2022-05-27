@@ -1,0 +1,21 @@
+version: "3"
+
+# More info at https://hub.docker.com/r/nico640/docker-unms
+services:
+  ubnt_uisp:
+    container_name: ubnt_uisp
+    image: nico640/docker-unms
+    hostname: ubnt-uisp
+    domainname: soultree.lan
+    ports:
+      - "8080:80/tcp"
+      - "10443:443/tcp"
+      - "2055:2055/udp"
+    environment:
+      TZ: 'Europe/Zurich'
+      PUBLIC_HTTPS_PORT: 10443
+      PUBLIC_WS_PORT: 10443
+    # Volumes store your data between container upgrades
+    volumes:
+      - '/data/uisp/:/config'
+    restart: unless-stopped
